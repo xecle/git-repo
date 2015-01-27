@@ -619,7 +619,7 @@ class Remote(object):
     return self._review_url + self.projectname
 
   def _SshReviewUrl(self, userEmail, host, port):
-    username = self._config.GetString('review.%s.username' % self.review)
+    username = self._config.GetString('review.%s.username' % self.name)
     if username is None:
       username = userEmail.split('@')[0]
     return 'ssh://%s@%s:%s/' % (username, host, port)
